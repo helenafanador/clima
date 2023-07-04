@@ -1,0 +1,171 @@
+:root{
+  --section-overlay: rgba(0,0,0.7);
+  --background-overlay: rgba(0,0,0.2);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0 20px;
+ 
+}
+.cont .cont__OnOff{
+  display: flex;
+  position:relative;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 
+  0 0 0 0 rgba(143,64,248, 0.5),
+  0 0 0 0 #27c8ff80;
+  transition: 
+  transform 0.3s ease,
+  box-shadow 0.3s ease;
+}
+.div .weather{
+ justify-content:center;
+ border:  rgb(230, 220, 249);
+ text-align: center;
+ background-color: rgba(89, 107, 128, 0.611);
+ height: 250px;
+ width: 400px;
+ margin: 0;
+ border-radius: 40px 300px 20px 20px;
+}
+.div .imagen{
+  display: flex;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  }
+.div .temp{
+  display: flex;
+  position:initial;
+  height: 10%;
+  width:0;
+  background-color: (300,255,255, 0.5);
+  border-radius: 30px;
+  justify-content:left;
+  margin: 5rem;
+
+  font-size:5rem;
+  text-shadow: 5px 6px (50,50,70,0.5);
+  text-align:right;
+  color:rgb(39, 17, 146);
+  box-shadow: 2px 1px (0,0,0,0.2);
+}
+.div .sensation{
+  display: flex;
+  justify-content:first baseline;
+  font-size: 1rem;
+  font-style:oblique;
+  text-align: left;
+  font-weight: bold;
+ }
+ .div .speed {
+  display: flex;
+  justify-content:first baseline;
+  font-size: 1rem;
+  font-style:oblique;
+  text-align: left;
+  font-weight: bold;
+ }
+ .div .pressure {
+  display: flex;
+  justify-content:first baseline;
+  font-size: 1rem;
+  font-style:oblique;
+  text-align: left;
+  font-weight: bold;
+
+ }
+
+.div .location{
+  display: flex;
+  justify-content:first;
+  font-size: 1rem;
+  font-style:oblique;
+  font-weight: bold;
+  text-align: left;
+  }
+.div .temperature{
+  display: flex;
+  border-radius: 10%;
+  width: 300px;
+  height: 30px;
+  text-align:left;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+  justify-content: center;
+  background-color: rgba(80, 108, 164, 0.667);
+  
+}
+
+@media screen and (max-width: 500px) { .weather{
+  display: inline-block;
+   width: 300px;
+  text-align: center;
+}
+}
+@media screen and (max-width: 500px) { .temperature{
+  display: inline-block;
+  width: 300px;
+  text-align: center;
+}
+}
+
+@media screen and (max-width: 300px) {
+  .div{
+margin:0;
+
+
+  
+}
+.weather{
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+  }
+ .temperature{
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+}
+.temp{
+  display: inline-block;
+  font-size: 10px;
+  height: 300px;
+   text-align: center;
+}
+
+.weather .imagen{
+  display: flex;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 600px;
+  top: 30%;
+}
+.weather .temp{
+  display: flex;
+  position:initial;
+  height: 10%;
+  background-color: (300,255,255, 0.5);
+  border-radius: 30px;
+  font-size:2rem;
+  text-shadow: 5px 6px (50,50,70,0.5);
+  text-align:center;
+  color:rgb(20, 56, 119);
+ 
+}
+}
