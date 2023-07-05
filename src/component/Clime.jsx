@@ -5,12 +5,11 @@ const Clime = ( {goodDay,day} )=> {
 
     const [degree, setDegree]= useState(true) 
     const icon=`/${goodDay.weather?.[0].icon}.svg`
-    console.log(icon)
     const tempe=degree?`${Math.ceil( goodDay.main?.temp -273.15)}°C`
     :`${Math.ceil(( goodDay.main?.temp -273.15)*1.8+32)}°F`
     const termica=degree?`Sensación Térmica: ${Math.ceil( goodDay.main?.feels_like -273.15)}°C`
     :`Sensación Térmica: ${Math.ceil( (goodDay.main?.feels_like -273.15)*1.8+32)}°F`
-    const spd=`${Math.ceil( goodDay.main?.speed??0)} m/s`;
+    const spd=`${Math.ceil( goodDay.wind?.speed??0)} m/s`;
     const press=`${Math.ceil( goodDay.main?.pressure??0)} hPa`;
 
   const text = degree? "cambiar a °F": "cambiar a °C"

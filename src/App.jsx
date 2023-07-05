@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Clime from './component/clime'
+import Clime from './component/Clime'
 
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   function day(){
     setIsDay(!isDay)
   }
+  console.log(isDay)
   const background=isDay?"/dia.jpg":"/noche3.jpg"
   document.body.style=`background-image: url(${background});
   background-size: cover;
