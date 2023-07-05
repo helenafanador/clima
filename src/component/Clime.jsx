@@ -1,17 +1,19 @@
 import { useState } from "react";
 
 
-const Clime = ( {goodDay} )=> {
+const Clime = ( {goodDay,day} )=> {
 
     const [degree, setDegree]= useState(true) 
     const icon=`/${goodDay.weather?.[0].icon}.svg`
+    console.log(icon)
     const tempe=degree?`${Math.ceil( goodDay.main?.temp -273.15)}°C`
     :`${Math.ceil(( goodDay.main?.temp -273.15)*1.8+32)}°F`
     const termica=degree?`Sensación Térmica: ${Math.ceil( goodDay.main?.feels_like -273.15)}°C`
-    :`Sensación_Termica: ${Math.ceil( (goodDay.main?.feels_like -273.15)*1.8+32)}°F`
-    const spd=degree?`${Math.ceil( goodDay.main?.speed??0)} m/s`:null;
-    const press=degree?`${Math.ceil( goodDay.main?.pressure??0)} hPa`:null;
-  
+    :`Sensación Térmica: ${Math.ceil( (goodDay.main?.feels_like -273.15)*1.8+32)}°F`
+    const spd=`${Math.ceil( goodDay.main?.speed??0)} m/s`;
+    const press=`${Math.ceil( goodDay.main?.pressure??0)} hPa`;
+
+  const text = degree? "cambiar a °F": "cambiar a °C"
 
     function change(){
         setDegree(!degree)
@@ -21,8 +23,10 @@ const Clime = ( {goodDay} )=> {
         <div className="div">
            
             <div className="weather">
-            <p className="temp">{tempe}</p>
-            <img className="imagen" src={icon} alt="" />
+                <div>
+                <p className="temp">{tempe}</p>
+                <img className="imagen" src={icon} alt="" />
+            </div>
             <p className="sensation">{termica}</p>
             <p className="speed">{spd}</p>
             <p className="pressure">{press}</p>
@@ -33,7 +37,7 @@ const Clime = ( {goodDay} )=> {
                                 
             </div>
             <br/>
-            <button className='temperature' onClick={change}>Cambiar a °F</button>
+            <button className='temperature' onClick={change}>{text}</button>
          </div>
         )
 }
