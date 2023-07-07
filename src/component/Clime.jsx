@@ -12,7 +12,7 @@ const Clime = ( {goodDay,day} )=> {
     const spd=`${Math.ceil( goodDay.wind?.speed??0)} m/s`;
     const press=`${Math.ceil( goodDay.main?.pressure??0)} hPa`;
 
-  const text = degree? "cambiar a °F": "cambiar a °C"
+  const text = degree? "Cambiar a °F": "Cambiar a °C"
 
     function change(){
         setDegree(!degree)
