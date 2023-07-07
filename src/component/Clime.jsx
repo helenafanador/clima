@@ -27,16 +27,16 @@ const Clime = ( {goodDay,day} )=> {
                 <img className="imagen" src={icon} alt="" />
             </div>
             <p className="sensation">{termica}</p>
-            <p className="speed">{spd}</p>
-            <p className="pressure">{press}</p>
+            <p className="speed">Vel: {spd}</p>
+            <p className="pressure">Pres: {press}</p>
             
                <div className="location">
-                  <p>📌 {goodDay.name}- {goodDay.sys?.country}</p>
+                  <p>📌Ubicacion. {goodDay.name}- {goodDay.sys?.country}</p>
                 </div>
                                 
+            <button className='temperature' onClick={change}>{text}</button>
             </div>
             <br/>
-            <button className='temperature' onClick={change}>{text}</button>
          </div>
         )
 }
