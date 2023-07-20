@@ -16,7 +16,7 @@ function App() {
     setIsDay(!isDay)
   }
   console.log(isDay)
-  const background=isDay?"/diasuizo.jpg":"/nochehermosa.jpg"
+  const background=isDay?"/dia.jpg":"/noche.jpg"
   document.body.style=`background-image: url(${background});
   background-size: cover;
         background-position: center;
