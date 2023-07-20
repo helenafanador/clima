@@ -47,7 +47,7 @@ html{
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: center;
+
 margin-top: 2rem;
 
 }
@@ -73,11 +73,12 @@ body{
  border:  rgb(250, 220, 249);
  text-align: center;
  border-radius: 150px 150px 50px 20px;
- background-color: rgba(255, 255, 255, 0.145);
+ background-color: rgba(26, 21, 21, 0.404);
  backdrop-filter: blur(10px);
 }
 .weather>p {
-  margin-left: 2rem;
+  margin-left: 3rem;
+  color:white
 }
 .div .imagen{
   display: flex;
@@ -86,14 +87,22 @@ body{
   margin-left: 2rem;
 
   }
+  .temp_max{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    font-weight: bold;
+    margin-top: 0rem;
+  }
 
 .div .sensation{
   display: flex;
   justify-content:first baseline;
+  color: white;
   font-size: 1rem;
-  font-style:oblique;
   text-align: left;
   font-weight: bold;
+  
  }
  .div .speed {
   display: flex;
@@ -122,13 +131,21 @@ body{
   font-weight: bold;
   text-align: left;
   align-self: center;
+  color: white;
   }
-.button .temperature{
-  display: flex;
-  width:300px;
-  text-align: center;
-  font-size: 2rem;
-
+  .div .temperature{
+     width: 8rem;
+     position: relative;
+   
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 2rem;
+     border-radius: 40px;
+    font-weight: bolder;
+    cursor: pointer;
+    color:white;
+    background-color: rgba(29, 31, 36, 0.39);
   }
   @media (width<=2200px){
     .div .weather{
@@ -138,12 +155,11 @@ body{
     }
      }
   @media (width>=1200px){
-    .title{
-      transform: scale(.0);
-    }
+    
     .div{
    padding: 10rem;
     height: 3rem;
+    transform: scale(1.2);
         
     }
      
@@ -152,14 +168,7 @@ body{
       width: 5rem;
       padding: auto;
     }
-    .div .weather {
-      padding: 0;
-     
-      display: flex;
-      justify-content: flex-start;
-      text-align: left;
-    }
-    .weather .imagen{
+     .weather .imagen{
       display: flex;
       height: 6rem;
       width: 8rem;
@@ -170,48 +179,37 @@ body{
       font-size:2.2rem;
       text-align:center;
       color:white;
-      text-shadow: 3px 3px black;
-      padding: 3rem;
+      text-shadow: 3px 3px rgba(0, 0, 0, 0.829);
       height: 1rem;
       margin: 0;
-         
+      }
+      .temp_max{
+        display: flex;
+        justify-content: center;
+        margin-top: .7rem;
+        padding: 1.2rem;
       }
       .div .sensation{
-      display: flex;
-      justify-content: center;
       font-size: 1rem;
+      padding: 0rem;
       font-style:oblique;
       font-weight: bold;
       }
       .div .speed {
-      display: flex;
+      
       font-size: 0.7rem;
       font-style:oblique;
       font-weight: bold;
       }
-      .div .pressure {
-        padding: 2rem;
-        font-size: 0.7rem;
-        font-style:oblique;
-        font-weight: bold;
-        margin-top:1rem;
-      }
-      .div .location{
+    
+          .div .temperature{
       display: flex;
-      justify-content:center;
-      font-size: 2rem;
-      font-style:oblique;
-      font-weight: bold;
-      height: 40rem;
-      margin: 0;
-      
-      }
-      .div .temperature{
-      display: flex;
-      width: 300px;
+      padding: 1rem;
+      left: .8rem;
+      width: 170px;
       height: 30px;
       text-align:center;
-      font-size: 3rem;
+      font-size: 1rem;
       font-weight: bolder;
       cursor: pointer;
    
@@ -221,11 +219,11 @@ body{
   }
   @media (width>=750px){
     .title{
-      transform: scale(1.5);
-    }
-   .div .weather{
+      transform: scale(1.0);
+      }
+      .div .weather{
     position: static;
-    left: 5rem;   
+      
   }
    .temperature{
     position: static;
@@ -234,16 +232,24 @@ body{
       
     }
     @media (width>=610px){
+      .title{
+        display: flex;
+        justify-content: flex-start;
+             }      
           .weather{
           transform: scale(1.5);
-          margin-top: 5rem;
-    }
+         
+        }
+        .div{
+          margin-top: 0rem;
+          margin: 3.5rem;
+        }
   }
     
 @media (width>=450px){
   .title{
+    margin: 3rem;
     padding: 2rem;
-    transform: scale(1.5);
     text-shadow: 10px 10px 10px black ;
       
   }
@@ -254,31 +260,28 @@ body{
       }
     .div .temperature{
       display: flex;
-      justify-content: end;
-      padding: -3rem;
+      
     }
     .temperature{
-    position: relative;
-    left: 4rem;
-          
+     left: 1.5rem;  
   }
   }
 
 @media screen and (width>=320px) {
     .title{
       font-size:2rem;
-     margin: 0rem;
-     margin-left: -2rem;
-     display: flex;
+      display:flex;
+     justify-content: flex-start;
+     left: 3rem;
      
      }
    
   .div .weather {
     transform: scale(1.2);
-    padding: -5rem;
-    margin: 0rem;
-    height: 15rem;
-    width: 14rem;
+    padding: 1rem;
+    margin: 3rem;
+    height: 17rem;
+    width: 13rem;
     display: flex;
     justify-content: flex-start;
     }
@@ -297,57 +300,35 @@ body{
     }
     .div .sensation{
     display: flex;
-    padding: 1.7rem;
+    padding: 1.5rem;
     width: 14rem;
-    height: 1rem;
+    height: .5rem;
     margin: -1.8rem;
-    margin-top: 0.4rem;
+    margin-top: 0.2rem;
     font-size: 0.7rem;
-    font-style:oblique;
-    font-weight: bold;
+   
     }
     .div .speed {
     display: flex;
     margin: 1rem;
     margin-left: -0.1rem;
-    padding: 0.4rem;
     width: 5rem;
     height: 1rem;
     font-size: 0.7rem;
-    font-style:oblique;
-    font-weight: bold;
-
-    }
+        }
     .div .pressure {
       display: flex;
       margin: 0.1rem;
-      padding: 0rem;
       height: 1rem;
-      font-size: 0.7rem;
-      font-style:oblique;
-      font-weight: bold;
-    
-
-    }
+      font-size: 0.6rem;
+      }
     .div .location{
     display: flex;
-    font-size: 0.9rem;
-    font-style:oblique;
-    font-weight: bold;
-    padding: 0rem;
+    font-size: 0.8rem;
+    padding: .3rem;
              
     }
-    .div .temperature{
-    width: 150px;
-    height: 30px;
-    text-align:center;
-    margin-top: 5rem;
-    font-size: 1rem;
-    border-radius: 8em;
-    font-weight: bolder;
-    cursor: pointer;
-    background-color: rgba(119, 127, 143, 0.353);
-   }
+    
    .button .temperature{
     display: flex;
     text-align: center;

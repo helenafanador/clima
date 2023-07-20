@@ -1,16 +1,22 @@
 import { useState } from "react";
 
 
-const Clime = ( {goodDay,day} )=> {
+const Clime = ( {goodDay,day,loadingData, showdData} )=> {
 
     const [degree, setDegree]= useState(true) 
     const icon=`/${goodDay.weather?.[0].icon}.svg`
     const tempe=degree?`${Math.ceil( goodDay.main?.temp -273.15)}°C`
     :`${Math.ceil(( goodDay.main?.temp -273.15)*1.8+32)}°F`
+    const tempe_max=degree?`${Math.ceil( goodDay.main?.temp_max -273.15)}°C`
+    :`${Math.ceil(( goodDay.main?.temp -273.15)*1.8+32)}°F`
+    const tempe_min=degree?`${Math.ceil( goodDay.main?.temp_min -273.15)}°C`
+    :`${Math.ceil(( goodDay.main?.temp -273.15)*1.8+32)}°F`
     const termica=degree?`Sensación Térmica: ${Math.ceil( goodDay.main?.feels_like -273.15)}°C`
     :`Sensación Térmica: ${Math.ceil( (goodDay.main?.feels_like -273.15)*1.8+32)}°F`
     const spd=`${Math.ceil( goodDay.wind?.speed??0)} m/s`;
     const press=`${Math.ceil( goodDay.main?.pressure??0)} hPa`;
+
+
 
   const text = degree? "Cambiar a °F": "Cambiar a °C"
 
@@ -26,6 +32,7 @@ const Clime = ( {goodDay,day} )=> {
                 <p className="temp">{tempe}</p>
                 <img className="imagen" src={icon} alt="" />
             </div>
+            <p className="temp_max">Max: {tempe_max} / Min:{tempe_min}</p>
             <p className="sensation">{termica}</p>
             <p className="speed">Vel: {spd}</p>
             <p className="pressure">Pres: {press}</p>
